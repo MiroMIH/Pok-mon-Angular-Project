@@ -1,0 +1,26 @@
+
+<nav>
+    <div class="nav-wrapper blue">
+      <a href="#" class="brand-logo center ">POKE-DEX-AB</a>
+    </div>
+</nav>
+
+
+<div class="row ">
+    <div *ngFor="let pokemon of pokemonsList" class="col m2  s6" >    
+    <div class="col" >
+      <div class="card "  >
+        <div class="card-image" (click)="goToPokemonDetail(pokemon)">
+          <img [src]="pokemon.picture"> 
+        </div>
+        <div class="card-content" [appBorderCard]="pokemon.types[0]">
+            <p>{{pokemon.name}}</p>
+            <p>HP :{{pokemon.hp}} - CP :{{pokemon.cp}}</p>
+            <p>{{pokemon.created | date:"dd/MM/yyyy" | uppercase}}</p>
+            <p>{{pokemon.types}}</p>
+        </div>
+      </div>
+    </div>
+  
+    </div>
+  </div>
